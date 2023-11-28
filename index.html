@@ -8,6 +8,11 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="msapplication-tap-highlight" content="no"/>
     <title>加载中...</title>
+	<link rel="stylesheet" type="text/css" href="/files/css/loading.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/files/css/alert.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/files/css/apply.css?v=2">
+    <link rel="stylesheet" type="text/css" href="/files/css/hall.css?v=2">	
+    <link rel="stylesheet" type="text/css" href="/files/css/club.css?v=2">
     <script type="text/javascript">
         var _thost = 'http://' + window.location.host;
         var pathArr = window.location.pathname.split("/");
@@ -5933,27 +5938,18 @@
     </div>
 
 </div>
-
+	
 <script src="/files/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="/files/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/files/js/angular.min.js"></script>
+<script type="text/javascript" src="/files/js/fastclick.js"></script>
+<script type="text/javascript" src="/files/js/jquery.marquee.min.js"></script>
+<script type="text/javascript" src="/files/js/clipboard.min.js"></script>
+<script type="text/javascript" src="/files/js/rem.js"></script>
+<script type="text/javascript" src="/fiesc/js/aes.js"></script>
+<script type="text/javascript" src="/files/js/md5.js"></script>	
 <script type="text/javascript">
-    //------css
-    DynLoading.css(ResourceUrl + 'files/css/loading.css?v=2');
-    DynLoading.css(ResourceUrl + 'files/css/alert.css?v=2');
-    DynLoading.css(ResourceUrl + 'files/css/apply.css?v=2');
-    DynLoading.css(ResourceUrl + 'files/css/hall.css?v=3');
-    DynLoading.css(ResourceUrl + 'files/css/club.css?v=2');
-
-    //------js
-    DynLoading.js(ResourceUrl + 'files/js/fastclick.js');
-    DynLoading.js(ResourceUrl + 'files/js/clipboard.min.js');
-    DynLoading.js(ResourceUrl + 'files/js/rem.js');
-    DynLoading.js(ResourceUrl + 'fiesc/js/aes.js');
-    DynLoading.js(ResourceUrl + 'files/js/md5.js');
-
     var Setting = {globalData: {}, userData: {}};
-    DynLoading.js(ResourceUrl + 'files/js/jquery-1.9.1.min.js', function () {
-        DynLoading.js(ResourceUrl + 'files/js/jquery.marquee.min.js');
-        DynLoading.js(ResourceUrl + 'files/js/angular.min.js', function () {
             var code = DynLoading.getUrlParam("code");
             let token = window.localStorage.getItem('token');
             if (!token) {
@@ -5968,11 +5964,9 @@
                         }
                     } else {
                         DynLoading.gotoWx();
-                        return;
                     }
                 } else {
                     DynLoading.goto('login');
-                    return;
                 }
             }
 
@@ -5989,7 +5983,6 @@
                 window.localStorage.removeItem('return_url');
                 window.localStorage.setItem('return_url', window.location.href);
                 DynLoading.goto('login');
-                return;
             }
             if (code && obj.data.tk != "") {
                 token = obj.data.tk;
@@ -6029,10 +6022,8 @@
                 "isAuthPhone": obj.data.isAuthPhone,
                 "phone": obj.data.user.phone,
             }; 
-            DynLoading.js('/files/js/hall.js?v=123');
-        });
-    });
 </script>
+<script type="text/javascript" src="/files/js/hall.js?v=123"></script>
 <script>
     wx.config({
         debug: false,
